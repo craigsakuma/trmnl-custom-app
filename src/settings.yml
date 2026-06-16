@@ -10,7 +10,7 @@ dark_mode: 'no'
 static_data: ''
 polling_verb: get
 framework_version: latest
-polling_url: 'https://placeholder.railway.app/trmnl'
+polling_url: 'https://placeholder.railway.app/trmnl'  # TODO (TCA-5): replace with real Railway URL
 polling_headers: ''
 name: TRMNL Custom App
 refresh_interval: 5
