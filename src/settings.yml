@@ -1,0 +1,17 @@
+#
+# Changes to this file will be overwritten by `trmnlp pull`.
+#
+# Docs: https://help.trmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
+#
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: latest
+polling_url: 'https://placeholder.railway.app/trmnl'  # TODO (TCA-5): replace with real Railway URL
+polling_headers: ''
+name: TRMNL Custom App
+refresh_interval: 5
+# id: ''  # fill in once plugin exists (TCA-5)

@@ -1,0 +1,18 @@
+{% if slot == "A" or slot == "B" %}
+<div class="layout layout--col layout--center gap--space-between">
+  <div class="markup markup--centered">
+    <span class="label label--large">{{ quote }}</span>
+  </div>
+  <div class="title_bar">
+    <span class="title">Slot {{ slot }}</span>
+    <span class="instance">TRMNL Custom App</span>
+  </div>
+</div>
+{% else %}
+<div class="layout layout--col layout--center gap--space-between">
+  <span class="title title--large">--:--</span>
+  <div class="title_bar">
+    <span class="title">TRMNL Custom App</span>
+  </div>
+</div>
+{% endif %}
