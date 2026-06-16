@@ -1,0 +1,15 @@
+# TRMNLP configuration
+# {{ env.VARIABLE }} interpolation is available here
+---
+watch:
+  - .trmnlp.yml
+  - src
+
+custom_fields: {}
+
+time_zone: America/Los_Angeles
+
+variables:
+  slot: "A"
+  quote: "Eyes on the Prize. Finish Travel Roboto"
+  trmnl: {}

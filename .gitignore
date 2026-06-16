@@ -24,3 +24,6 @@ env/
 
 # trmnlp
 .trmnlp.local.yml
+
+# Claude checkpoints (local-only session state)
+.claude/checkpoints/
