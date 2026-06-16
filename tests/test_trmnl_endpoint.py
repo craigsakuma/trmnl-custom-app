@@ -1,12 +1,16 @@
+import pytest
 from fastapi.testclient import TestClient
 
 from app.main import app
 from app.slots import QUOTES
 
-client = TestClient(app)
+
+@pytest.fixture()
+def client() -> TestClient:
+    return TestClient(app)
 
 
-def test_trmnl_returns_flat_slot_payload() -> None:
+def test_trmnl_returns_flat_slot_payload(client: TestClient) -> None:
     resp = client.get("/trmnl")
     assert resp.status_code == 200
 

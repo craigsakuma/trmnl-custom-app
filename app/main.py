@@ -4,12 +4,14 @@ Exposes:
 - ``/health`` — readiness check.
 - ``/trmnl``  — the TRMNL polling endpoint; returns the current slot + quote as
   a flat JSON payload (exposed at the Liquid root as ``{{ slot }}`` /
-  ``{{ quote }}``). See ARCHITECTURE.md §6, §7.1.
+  ``{{ quote }}``). Slot is computed fresh from wall-clock time on every poll;
+  refresh rate is configured in the TRMNL UI, not returned here. See
+  ARCHITECTURE.md §6, §7.1.
 """
 
 from fastapi import FastAPI
 
-from app.slots import slot_payload
+from app.slots import SlotPayload, slot_payload
 
 app = FastAPI(title="TRMNL Custom App")
 
@@ -20,7 +22,5 @@ def health() -> dict[str, str]:
 
 
 @app.get("/trmnl")
-def trmnl() -> dict[str, str]:
-    # Slot is computed fresh from wall-clock time on every poll. Polling does
-    # not return refresh_rate (Redirect-only); the rate is set in the TRMNL UI.
+def trmnl() -> SlotPayload:
     return slot_payload()
